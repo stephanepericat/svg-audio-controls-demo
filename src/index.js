@@ -5,6 +5,7 @@ import {
   Button,
   Knob,
   Label,
+  Led,
   Scope,
   Switch
 } from "svg-audio-controls/src/index";
@@ -15,6 +16,17 @@ import SVG from "svg.js";
 
 // SVG app
 const App = new SVG(document.querySelector(".container"));
+
+const led1 = new Led(App, {
+  offsetLeft: 240,
+  offsetTop: 130,
+  radius: 20,
+  strokeWidth: 2
+});
+
+led1.append();
+led1.onValueChange = ({ detail }) =>
+  console.log("LED 1 value changed: ", detail.value, led1);
 
 const b1 = new Button(App, {
   backgroundColor: "#ccc",
@@ -28,18 +40,30 @@ const b1 = new Button(App, {
   strokeWidth: 10
 });
 b1.append();
-b1.onValueChange = ({ detail }) =>
+b1.onValueChange = ({ detail }) => {
   console.log("B1 value changed: ", detail.value);
-// console.log("B1", b1);
+};
 
+// console.log("B1", b1);
+const colors = ["#ff0", "#f70", "#f00", "#0c0", "#00f"];
+let idx = 0;
 const b2 = new Button(App, {
   offsetLeft: 440,
   offsetTop: 290,
   temporary: true
 });
 b2.append();
-b2.onValueChange = ({ detail }) =>
+b2.onValueChange = ({ detail }) => {
   console.log("B2 value changed: ", detail.value);
+
+  if (idx === colors.length - 1) {
+    idx = 0;
+  } else {
+    idx += 1;
+  }
+
+  led1.highlightColor = colors[idx];
+};
 // console.log("B2", b2);
 
 const lbl1 = new Label(App, {
@@ -109,8 +133,10 @@ const sw2 = new Switch(App, {
   offsetTop: 80
 });
 sw2.append();
-sw2.onValueChange = ({ detail } = {}) =>
+sw2.onValueChange = ({ detail } = {}) => {
+  led1.toggle();
   console.log("SW2 value changed: ", detail.value);
+};
 
 // SCOPE
 const AudioContext = window.AudioContext || window.webkitAudioContext;
