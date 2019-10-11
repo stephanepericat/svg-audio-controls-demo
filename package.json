@@ -1,0 +1,36 @@
+{
+  "name": "svg-audio-controls-demo",
+  "version": "1.0.0",
+  "description": "A svg-audio-controls demo.",
+  "scripts": {
+    "dev": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephanepericat/svg-audio-controls-demo.git"
+  },
+  "author": "Stephane P. Pericat <contact@pericat.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stephanepericat/svg-audio-controls-demo/issues"
+  },
+  "homepage": "https://github.com/stephanepericat/svg-audio-controls-demo#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.12.0",
+    "reset-css": "^4.0.1",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "svg-audio-controls": "git+https://github.com/stephanepericat/svg-audio-controls.git",
+    "svg.js": "^2.7.1"
+  }
+}
