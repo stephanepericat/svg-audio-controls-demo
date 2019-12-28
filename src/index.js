@@ -15,7 +15,9 @@ import "./sass/index.scss";
 import { SVG } from "@svgdotjs/svg.js";
 
 // SVG app
-const App = new SVG(document.querySelector(".container"));
+const App = SVG()
+  .addTo(document.querySelector(".container"))
+  .size("100%", "100%");
 
 const led1 = new Led(App, {
   offsetLeft: 240,
