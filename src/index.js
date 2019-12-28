@@ -12,7 +12,7 @@ import {
 
 import "./sass/index.scss";
 
-import SVG from "svg.js";
+import { SVG } from "@svgdotjs/svg.js";
 
 // SVG app
 const App = new SVG(document.querySelector(".container"));

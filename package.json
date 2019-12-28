@@ -1,6 +1,6 @@
 {
   "name": "svg-audio-controls-demo",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "A svg-audio-controls demo.",
   "scripts": {
     "dev": "webpack-dev-server"
@@ -30,7 +30,7 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
-    "svg-audio-controls": "git+https://github.com/stephanepericat/svg-audio-controls.git",
-    "svg.js": "^2.7.1"
+    "@svgdotjs/svg.js": "^3.0.16",
+    "svg-audio-controls": "git+https://github.com/stephanepericat/svg-audio-controls.git"
   }
 }
