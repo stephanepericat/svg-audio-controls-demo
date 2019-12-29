@@ -20,7 +20,7 @@ const App = SVG()
   .size("100%", "100%");
 
 const led1 = new Led(App, {
-  offsetLeft: 240,
+  offsetLeft: 244,
   offsetTop: 130,
   radius: 20,
   strokeWidth: 2
@@ -113,15 +113,15 @@ k2.onValueChange = ({ detail } = {}) =>
   console.log("K2 > value changed: ", detail.value);
 
 const sw1 = new Switch(App, {
-  backgroundColor: "#151515",
+  backgroundColor: "#ff0",
   isHorizontal: true,
   offsetLeft: 120,
   offsetTop: 80,
   padding: 5,
-  size: 30,
+  size: 36,
   steps: 3,
-  strokeColor: "#ccc",
-  switchColor: "#666"
+  strokeColor: "#f00",
+  switchColor: "blue"
 });
 
 sw1.append();
