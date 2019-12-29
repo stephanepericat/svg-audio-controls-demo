@@ -7,7 +7,8 @@ import {
   Label,
   Led,
   Scope,
-  Switch
+  Switch,
+  WaveForm
 } from "svg-audio-controls/src/index";
 
 import "./sass/index.scss";
@@ -170,15 +171,15 @@ const sc = new Scope(App, {
   backgroundColor: "#ddd",
   divisions: 6,
   gridColor: "#f70",
-  offsetLeft: 250,
-  offsetTop: 480,
+  offsetLeft: 550,
+  offsetTop: 190,
   signalColor: "#BC6C1C",
   signalWidth: 4,
   width: 400
 });
 sc.append();
 
-console.log("SCOPE >>>", sc);
+// console.log("SCOPE >>>", sc);
 
 setInterval(() => {
   analyser.getByteTimeDomainData(dataArray);
@@ -188,3 +189,36 @@ setInterval(() => {
   }
   sc.draw(points);
 }, Math.pow(interval, 2));
+
+// WAVEFORM
+const url = "/sounds/500419__dj-somar__intro-microbrute-3.wav";
+const WaveDisplay = new WaveForm(App, {
+  backgroundColor: "#111",
+  height: 100,
+  offsetLeft: 550,
+  offsetTop: 70,
+  waveFormColor: "#f70",
+  width: 400
+});
+
+WaveDisplay.append();
+
+// console.log("DISPLAY", WaveDisplay);
+
+const displayWaveForm = async (url, display) => {
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  const ctx = new AudioContext();
+
+  try {
+    const ajax = await fetch(url);
+    const buffer = await ajax.arrayBuffer();
+    const audioData = await ctx.decodeAudioData(buffer);
+
+    display.audioData = audioData;
+    // console.log("AUDIO DATA >>>", display.audioData);
+  } catch (e) {
+    console.error("ERROR", e.message);
+  }
+};
+
+displayWaveForm(url, WaveDisplay);
