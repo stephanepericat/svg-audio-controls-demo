@@ -191,7 +191,8 @@ setInterval(() => {
 }, Math.pow(interval, 2));
 
 // WAVEFORM
-const url = "/sounds/500419__dj-somar__intro-microbrute-3.wav";
+// const url = "/sounds/500419__dj-somar__intro-microbrute-3.wav";
+const url = "/sounds/499763__phonosupf__shakuhachi-attack-9.wav";
 const WaveDisplay = new WaveForm(App, {
   backgroundColor: "#111",
   height: 100,
@@ -203,7 +204,7 @@ const WaveDisplay = new WaveForm(App, {
 
 WaveDisplay.append();
 
-// console.log("DISPLAY", WaveDisplay);
+console.log("DISPLAY", WaveDisplay);
 
 const displayWaveForm = async (url, display) => {
   const AudioContext = window.AudioContext || window.webkitAudioContext;
