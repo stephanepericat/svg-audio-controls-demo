@@ -12,13 +12,15 @@ import {
 
 import "./sass/index.scss";
 
-import SVG from "svg.js";
+import { SVG } from "@svgdotjs/svg.js";
 
 // SVG app
-const App = new SVG(document.querySelector(".container"));
+const App = SVG()
+  .addTo(document.querySelector(".container"))
+  .size("100%", "100%");
 
 const led1 = new Led(App, {
-  offsetLeft: 240,
+  offsetLeft: 244,
   offsetTop: 130,
   radius: 20,
   strokeWidth: 2
@@ -71,8 +73,8 @@ const lbl1 = new Label(App, {
   fontColor: "#f70",
   fontFamily: "Roboto",
   fontSize: 22,
-  offsetLeft: 370,
-  offsetTop: 80
+  offsetLeft: 320,
+  offsetTop: 60
 });
 
 lbl1.append();
@@ -111,15 +113,15 @@ k2.onValueChange = ({ detail } = {}) =>
   console.log("K2 > value changed: ", detail.value);
 
 const sw1 = new Switch(App, {
-  backgroundColor: "#151515",
+  backgroundColor: "#ff0",
   isHorizontal: true,
   offsetLeft: 120,
   offsetTop: 80,
   padding: 5,
-  size: 30,
+  size: 36,
   steps: 3,
-  strokeColor: "#ccc",
-  switchColor: "#666"
+  strokeColor: "#f00",
+  switchColor: "blue"
 });
 
 sw1.append();

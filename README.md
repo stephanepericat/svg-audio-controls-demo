@@ -2,6 +2,8 @@
 
 A svg-audio-controls demo.
 
+> This demo is for svg-audio-controls 2.x . [See here](https://github.com/stephanepericat/svg-audio-controls-demo/tree/1.0.1) for a demo of the legacy version.
+
 ## Installation
 
 ```shell
