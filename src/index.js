@@ -73,8 +73,8 @@ const lbl1 = new Label(App, {
   fontColor: "#f70",
   fontFamily: "Roboto",
   fontSize: 22,
-  offsetLeft: 370,
-  offsetTop: 80
+  offsetLeft: 320,
+  offsetTop: 60
 });
 
 lbl1.append();
