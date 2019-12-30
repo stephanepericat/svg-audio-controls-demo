@@ -172,7 +172,7 @@ const sc = new Scope(App, {
   divisions: 6,
   gridColor: "#f70",
   offsetLeft: 550,
-  offsetTop: 190,
+  offsetTop: 290,
   signalColor: "#BC6C1C",
   signalWidth: 4,
   width: 400
@@ -195,16 +195,19 @@ setInterval(() => {
 const url = "/sounds/499763__phonosupf__shakuhachi-attack-9.wav";
 const WaveDisplay = new WaveForm(App, {
   backgroundColor: "#111",
-  height: 100,
+  hasShadow: true,
+  height: 250,
   offsetLeft: 550,
-  offsetTop: 70,
+  offsetTop: 20,
+  shadowColor: "#f00",
+  shadowOpacity: 0.2,
   waveFormColor: "#f70",
-  width: 400
+  width: 800
 });
 
 WaveDisplay.append();
 
-console.log("DISPLAY", WaveDisplay);
+// console.log("DISPLAY", WaveDisplay);
 
 const displayWaveForm = async (url, display) => {
   const AudioContext = window.AudioContext || window.webkitAudioContext;
