@@ -202,7 +202,7 @@ const WaveDisplay = new WaveForm(App, {
   shadowColor: "#f00",
   shadowOpacity: 0.2,
   waveFormColor: "#f70",
-  width: 800
+  width: 700
 });
 
 WaveDisplay.append();
@@ -216,7 +216,8 @@ const displayWaveForm = async (url, display) => {
   try {
     const ajax = await fetch(url);
     const buffer = await ajax.arrayBuffer();
-    const audioData = await ctx.decodeAudioData(buffer);
+    const audioBuffer = await ctx.decodeAudioData(buffer);
+    const audioData = audioBuffer.getChannelData(0);
 
     display.audioData = audioData;
     // console.log("AUDIO DATA >>>", display.audioData);
